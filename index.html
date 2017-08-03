@@ -32,7 +32,7 @@
       <div class="col-md-8 col-md-offset-2">
         <div v-if="envio" :style="pTop">
           <div class="jumbotron">
-            <h2 class="text-center">Tabla de multiplicar a generar: {{ numero }}.</h2>
+            <h2 class="text-center">Tabla a generar: <span class="text-danger">{{ numero }}</span>.</h2>
             <p v-for="i in 10"><span class="label label-success">{{ numero }} * {{ i }} = {{ numero * i }}</span></p>
           </div>
           <button class="btn btn-danger pull-right" @click.prevent="regresar()">Regresar</button>
