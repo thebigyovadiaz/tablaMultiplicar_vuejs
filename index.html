@@ -43,39 +43,15 @@
           <form @submit.prevent="generar()" :style="pTop">
             <div class="form-group">
               <label>Número</label>
-              <input type="number" class="form-control" v-model="numero">
+              <input type="text" class="form-control" @keyup="inputState" v-model="numero">
             </div>
-            <button class="btn btn-primary pull-right" v-show="numero > 1">Enviar</button>
+            <button class="btn btn-primary pull-right" :class="disable">Enviar</button>
           </form>
         </template>
       </div>
     </div>
 
-    <script type="text/javascript">
-      var vm = new Vue({
-        el: '#app',
-        data: {
-          numero: 0,
-          envio: false
-        },
-        computed: {
-          pTop: function() {
-            return {'padding-top': '25px'};
-          },
-          saludo: function() {
-            return this.gender == 'M' ? 'Bienvenido' : 'Bienvenida';
-          }
-        },
-        methods: {
-          generar: function() {
-            this.envio = true;
-          },
-          regresar: function() {
-            this.envio = false;
-            this.numero = 0;
-          }
-        }
-      });
-    </script>    
+    <!-- Instancia de MainJS -->
+    <script type="text/javascript" src="js/main.js"></script>   
   </body>
 </html>
